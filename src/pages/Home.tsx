@@ -5,6 +5,7 @@ import { type RootState } from '../store/store'
 import useFetchProducts from '../api/useFetchProducts'
 import Card from '../components/Card'
 import Header from '../components/Header'
+import Category from '../components/Category'
 
 
 
@@ -21,7 +22,13 @@ function Home() {
     <div>
     <Header/> 
    <>
-   <Card products ={products}/>
+   <div>
+    <Category />
+   </div>
+   <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 container mx-auto'>
+      <Card products ={products}/>
+   </div>
+   
    </>
    </div>
   )

@@ -4,14 +4,17 @@ import { useState } from "react";
 import type { Product } from "../types";
 
  
- interface Products {
+ export interface Products {
     products:Product[]
     loading: boolean
+    category:string[]
   error: string | null |undefined
  }
 
- const initialState:Products = {
+ export const initialState:Products = {
       products:[],
+      category:[],
+      
       loading:false,
       error:""
       
@@ -26,10 +29,18 @@ import type { Product } from "../types";
 
 
  }
- 
+  
+ const fetchCategoryListFn = async()=>{
+    const response =await api.get('/products/category-list')
+    console.log(response.data)
+    return response.data
+
+ }
 
 
  export const fetchProducts = createAsyncThunk('products/fetchProducts',fetchApiData)
+ export  const fetchCategoryList= createAsyncThunk('category-list/fetchCategoryList',fetchCategoryListFn)
+
 
 
 const poroductsSlice = createSlice({
@@ -48,7 +59,7 @@ const poroductsSlice = createSlice({
   
     .addCase(fetchProducts.fulfilled, (state, action) => {
         state.loading = false
-        state.products= action.payload.products
+        state.products=action.payload.products
      
     })
     .addCase(fetchProducts.rejected,(state,action)=> {
@@ -56,6 +67,19 @@ const poroductsSlice = createSlice({
         state.error = action.error.message || "failded to fetch prodects"
 
     })
+
+     .addCase(fetchCategoryList.pending,(state,action)=>{
+        state.loading = true
+     })
+     .addCase(fetchCategoryList.fulfilled,(state,action)=>{
+        state.category = action.payload
+        state.loading = false
+     })
+     .addCase(fetchCategoryList.rejected,(state,action)=>{
+        state.loading =false
+        state.error = action.error.message || "failded to fetch category"
+     })
+    
     
   },
 
