@@ -8,3 +8,30 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.stars {
+  --star-size: 22px;
+  --star-color: #ddd;
+  --star-fill: rgb(6, 183, 0);
+
+  font-size: var(--star-size);
+  font-family: Times;
+  line-height: 1;
+  display: inline-block;
+}
+
+.stars::before {
+  content: "★★★★★";
+  background: linear-gradient(
+    90deg,
+    var(--star-fill) calc(var(--rating) / 5 * 100%),
+    var(--star-color) calc(var(--rating) / 5 * 100%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

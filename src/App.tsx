@@ -4,10 +4,10 @@ import Home from './pages/Home'
 import { QueryClient } from "@tanstack/react-query"
 import { Route, Routes } from 'react-router-dom'
 import SearchResults from './pages/SearchResults'
-import { useDispatch } from 'react-redux'
-import { fetchApiData, fetchProducts } from './slice/porductsSlice'
+ 
 import useFetchProducts from './api/useFetchProducts'
 import SingleProduct from './pages/SingleProduct'
+import AddToCartPage from './pages/AddToCartPage'
 
 export const queryClient = new QueryClient()
 
@@ -30,7 +30,9 @@ function App() {
 
       <Route path='/' element={<Home/>} />
       <Route path='search' element ={<SearchResults />} />
-       <Route path='search/:id' element ={<SingleProduct />} />
+       <Route path='search/:id' element ={<SingleProduct />} />\
+
+       <Route path='cart' element ={<AddToCartPage />} />
             
       </Routes>
    </>
