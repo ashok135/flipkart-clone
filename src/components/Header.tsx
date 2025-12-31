@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { CircleUser, ShoppingCart } from "lucide-react";
 import SearchBar from "./SearchBar";
 import { Link } from "react-router-dom";
@@ -11,6 +11,7 @@ interface StyleProps {
 
 function Header({ textColor, iconColor }: StyleProps) {
   const cartTotal = useSelector((state: RootState) => state.cart.totalQuantity);
+  const userData=useSelector((state:RootState)=>state.auth)
 
   return (
     <div className="">
@@ -39,19 +40,23 @@ function Header({ textColor, iconColor }: StyleProps) {
               </span>
             </button>
           </Link>
+          <Link to={'/login'}>
           <button className={`flex ${textColor}`}>
-            <CircleUser
+            { userData.isLoggedIn ?<img className="w-[30px]" src={userData.userData?.image} alt="" />:  <CircleUser
               size={30}
               type="button"
               className={`text-[30px] ${textColor}`}
-            />
-            Login
+            />}
+           
+           {userData.user?userData.user:'login'}
           </button>
+          </Link>
         </div>
       </div>
       <div className="block md:hidden px-4">
         <SearchBar />
       </div>
+      
     </div>
   );
 }

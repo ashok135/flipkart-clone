@@ -5,8 +5,10 @@ import Header from "../components/Header";
 import { removeFromCart } from "../slice/cartSlice";
 import BuyNowButton from "../components/BuyNowButton";
 
+
 function AddToCartPage() {
   const product = useSelector((state: RootState) => state.cart.items);
+  const userToken=useSelector((state:RootState)=>state.auth.token)
   const dispatch = useDispatch();
   console.log(product);
 
@@ -24,6 +26,7 @@ function AddToCartPage() {
   const totalProducts = product.reduce((sum, item) => {
     return sum + item.qty;
   }, 0);
+   
 
   return (
     <div>
