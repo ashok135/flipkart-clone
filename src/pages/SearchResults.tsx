@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../api/api";
 import type { Product } from "../types";
-import { useDispatch, useSelector } from "react-redux";
+import {   useSelector } from "react-redux";
 import type { RootState } from "../store/store";
 import Card from "../components/Card";
 import Header from "../components/Header";
@@ -13,63 +13,7 @@ import CategoryFilter from "../components/filters/CategoryFilter";
 import BrandFilter from "../components/filters/BrandFilter";
 
 function SearchResults() {
-  const groupedCategories = [
-    {
-      parentCategory: "Beauty & Personal Care",
-      imgUrl:
-        "https://rukminim2.flixcart.com/fk-p-flap/64/64/image/5f2ee7f883cdb774.png?q=100",
-      categories: ["beauty", "fragrances", "skin-care"],
-    },
-
-    {
-      parentCategory: "Home, Furniture & Decor",
-      imgUrl:
-        "https://rukminim2.flixcart.com/fk-p-flap/64/64/image/ff559cb9d803d424.png?q=100",
-      categories: ["furniture", "home-decoration"],
-    },
-
-    {
-      parentCategory: "Grocery & Daily Essentials",
-      imgUrl:
-        "https://rukminim2.flixcart.com/fk-p-flap/128/128/image/e730a834ad950bae.png?q=100",
-      categories: ["groceries"],
-    },
-
-    {
-      parentCategory: "Kitchen & Home Appliances",
-      imgUrl:
-        "https://rukminim2.flixcart.com/fk-p-flap/128/128/image/e90944802d996756.jpg?q=100",
-      categories: ["kitchen-accessories"],
-    },
-
-    {
-      parentCategory: "Electronics, Mobiles & Gadgets",
-      imgUrl:
-        "https://rukminim2.flixcart.com/fk-p-flap/128/128/image/1788f177649e6991.png?q=100",
-      categories: ["laptops", "smartphones", "tablets", "mobile-accessories"],
-    },
-
-    {
-      parentCategory: "Fashion, Sports & Lifestyle",
-      imgUrl:
-        "https://rukminim2.flixcart.com/fk-p-flap/128/128/image/b3020c99672953b9.png?q=100",
-      categories: [
-        "mens-shirts",
-        "mens-shoes",
-        "mens-watches",
-        "womens-dresses",
-        "womens-bags",
-        "womens-jewellery",
-        "womens-shoes",
-        "womens-watches",
-        "tops",
-        "sunglasses",
-        "sports-accessories",
-        "motorcycle",
-        "vehicle",
-      ],
-    },
-  ];
+ 
   const [filter, setFilter] = useState(false);
   const [category, setCategory] = useState(false);
   const searchData = useSelector((state: RootState) => state.search.search);
@@ -82,8 +26,7 @@ function SearchResults() {
   const brandsData = useSelector((state: RootState) => state.products.brand);
   console.log(brandsData);
 
-  const dispatch = useDispatch();
-
+ 
   console.log(searchData);
   const getUrl = async () => {
     const responce = await api.get("/products?limit=0");
@@ -122,7 +65,7 @@ function SearchResults() {
       <div className="fixed  w-full top-0 z-2 bg-blue-500 py-1">
         <Header textColor="text-white" iconColor="brightness-0 invert" />
       </div>
-      <div className="md:mt-[100px] mt-[100px] container mx-auto   flex-row md:flex bg-white gap-4 p-3 ">
+      <div className="md:mt-25 mt-25  container mx-auto   flex-row md:flex bg-white gap-4 p-3 ">
         <div className="w-full md:w-1/5 p-2  ">
           <h2 className="font-semibold text-[20px]">Filters</h2>
           <div className="md:hidden ">

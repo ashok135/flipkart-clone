@@ -1,8 +1,7 @@
 import {  Search } from "lucide-react";
 import { useState } from "react";
- import { Link, useNavigate } from "react-router-dom"
-import SearchResults from "../pages/SearchResults";
-import { useDispatch } from "react-redux";
+ import {   useNavigate } from "react-router-dom"
+ import { useDispatch } from "react-redux";
 import { setSearch } from "../slice/searchSlice";
 import { setBrand, setCategory } from "../slice/porductsSlice";
  

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import type { RootState } from "../store/store";
 import Header from "../components/Header";
-import { ShoppingCart, Bolt, Zap, Star, Tag } from "lucide-react";
+import {   Star, Tag } from "lucide-react";
 import AddToCart from "../components/AddToCart";
 import BuyNowButton from "../components/BuyNowButton";
 
@@ -34,7 +34,7 @@ function SingleProduct() {
       <div className="fixed  w-full top-0 z-2 bg-blue-500 py-1">
         <Header textColor="text-white" iconColor="brightness-0 invert" />
       </div>
-      <div className="container max-w-6xl mx-auto md:flex-row flex flex-col justify-center mt-[100px]  pb-[50px] ">
+      <div className="container max-w-6xl mx-auto md:flex-row flex flex-col justify-center mt-25  pb-12 ">
         <div className="w-full lg:w-2/5 flex">
           <div className="md:w-1/5  shadow-md hidden md:block ">
             {SingleProduct.images.map((image, index) => {

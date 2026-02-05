@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
-import { useMutation } from "@tanstack/react-query";
+ 
 import { useDispatch, useSelector } from "react-redux";
 import { loginSuccess } from "../slice/authSlice";
 import type { RootState } from "../store/store";
@@ -81,7 +80,7 @@ function Login() {
   }, [message]);
   return (<>
       
-     { userData.token ? <div className="mt-[100px]"><Logout/></div>:
+     { userData.token ? <div className="mt-25"><Logout/></div>:
 
     <div>
       <div className="fixed  w-full top-0 z-2 bg-blue-500 py-1">
@@ -90,7 +89,7 @@ function Login() {
       <div className="bg-blue-100 h-screen  flex items-center justify-center ">
         
        
-        <div className="container max-w-2xl  mx-auto p-2 flex gap-5  flex justify-center items-center">
+        <div className="container max-w-2xl  mx-auto p-2   gap-5  flex justify-center items-center">
            {message && (
         <p className="text-red-500 mb-3 transition-all fixed top-30">
           {message}
@@ -150,6 +149,11 @@ function Login() {
                   {login ? "Login" : "Sign In"}{" "}
                 </button>
                  {login? <a   className="text-blue-600"  onClick={()=>setLogin(!login)}>New to flipkat create one</a>: <a   className="text-blue-600"   onClick={()=>setLogin(!login)}>Already? Login</a> }
+              </div>
+              <div>
+                <p>    username: 'emilys',
+                    password: 'emilyspass', 
+                 </p>
               </div>
             </form>
           </div>

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import type {} from "../types";
 
 import { Heart } from "lucide-react";
 import type { Product } from "../types";
-import { Link, useNavigate, } from "react-router-dom";
+import { Link,   } from "react-router-dom";
 import { Star } from "lucide-react";
 
 interface CardProps {
@@ -13,11 +13,10 @@ interface CardProps {
   error: string | null | undefined;
 }
 
-function Card({ products, loading, error, category }: CardProps) {
+function Card({ products, loading, error  }: CardProps) {
   const [like, setLike] = useState(false);
   const [isId, setIsId] = useState<number[]>([]);
-  const navigate=useNavigate()
-
+ 
   if (loading) {
     return <h1 className="text-center">loading...</h1>;
   }
@@ -82,7 +81,7 @@ function Card({ products, loading, error, category }: CardProps) {
                 {product.brand ? product.brand : product.category}
               </h3>
               <h1 className="text-[px]  line-clamp-2 ">{product.title}</h1>
-              <button className="bg-green-700 text-white text-left  pl-1 rounded font-semibold max-w-[50px]  flex gap-0  ">
+              <button className="bg-green-700 text-white text-left  pl-1 rounded font-semibold max-w-12.5  flex gap-0  ">
                 {product.rating}
                 <Star fill="currentColor"/>
               </button>

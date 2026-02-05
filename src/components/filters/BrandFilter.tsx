@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
     import {
   ChevronDown,
   ChevronUp,} from "lucide-react";
-import { type BrandProps, setBrand, setCategory } from "../../slice/porductsSlice";
+import {  setBrand, setCategory } from "../../slice/porductsSlice";
 import { useEffect, useState } from "react";
 import { setSearch } from "../../slice/searchSlice";
  

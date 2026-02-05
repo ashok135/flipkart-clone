@@ -1,5 +1,4 @@
-import React, { useLayoutEffect } from "react";
-import { CircleUser, ShoppingCart } from "lucide-react";
+ import { CircleUser, ShoppingCart } from "lucide-react";
 import SearchBar from "./SearchBar";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -34,7 +33,7 @@ function Header({ textColor, iconColor }: StyleProps) {
           <Link to={"/cart"}>
             <button className={`flex gap-2 ${textColor} relative`}>
               <ShoppingCart size={30} /> Cart{" "}
-              <span className=" text-[12px] bg-red-400 inline py-0 px-1 rounded-[50%] absolute left-0 top-0 mt-[-10px]">
+              <span className=" text-[12px] bg-red-400 inline py-0 px-1 rounded-[50%] absolute left-0 top-0 -mt-2.5">
                 {" "}
                 {cartTotal}
               </span>
@@ -42,7 +41,7 @@ function Header({ textColor, iconColor }: StyleProps) {
           </Link>
           <Link to={'/login'}>
           <button className={`flex ${textColor}`}>
-            { userData.isLoggedIn ?<img className="w-[30px]" src={userData.userData?.image} alt="" />:  <CircleUser
+            { userData.isLoggedIn ?<img className="w-7.5" src={userData.userData?.image} alt="" />:  <CircleUser
               size={30}
               type="button"
               className={`text-[30px] ${textColor}`}

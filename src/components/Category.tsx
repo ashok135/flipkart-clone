@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import type { AppDispatch, RootState } from "../store/store";
-import { fetchCategoryList, setCategory } from "../slice/porductsSlice";
-import { setSearch } from "../slice/searchSlice";
-import { useNavigate } from "react-router-dom";
+ import { useDispatch, useSelector } from "react-redux";
+import type {  RootState } from "../store/store";
+import {   setCategory } from "../slice/porductsSlice";
+ import { useNavigate } from "react-router-dom";
 
 function Category() {
   const groupedCategories = [
@@ -87,7 +85,7 @@ function Category() {
             key={index + "img"}
             src={data.imgUrl}
             alt=""
-            className="w-[70px] h-auto text-center"
+            className="w-17.5 h-auto text-center"
           />
           <h3 className="text-center font-semibold">{data.parentCategory}</h3>
           <ul
@@ -95,7 +93,7 @@ function Category() {
       hidden group-hover:block
       bg-white shadow-lg
       p-3
-      z-50 p-4 flex gap-4 w-[200px]"
+      z-50    gap-4 w-50"
           >
             {data.categories.map((item) => {
               return (

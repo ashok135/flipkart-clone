@@ -1,6 +1,5 @@
 import { Zap } from 'lucide-react'
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+ import { useNavigate } from 'react-router-dom'
 
 function BuyNowButton() {
   const navigate=useNavigate()

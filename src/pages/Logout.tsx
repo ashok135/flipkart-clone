@@ -1,5 +1,4 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+ import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../slice/authSlice'
 import type { RootState } from '../store/store'
 import Header from '../components/Header'

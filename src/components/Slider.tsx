@@ -1,5 +1,5 @@
 import { ChevronLeftCircle,ChevronRightCircle } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
+import   { useEffect, useState } from 'react'
 
 function Slider() {
     const [index,setIndex]=useState(0)
@@ -44,7 +44,7 @@ function Slider() {
         {
           slides.map((img)=>{
             return(
-         <img     className="w-full flex-shrink-1 md:h-[300px] h-[150px] cover" src={`${img.img}`} alt="" key={img.id} /> 
+         <img     className="w-full shrink md:h-75 h-38 cover" src={`${img.img}`} alt="" key={img.id} /> 
                  )
           })
            

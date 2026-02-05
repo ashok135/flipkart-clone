@@ -1,9 +1,7 @@
-import   { useEffect,  } from 'react'
-import {   useSelector } from 'react-redux'
+ import {   useSelector } from 'react-redux'
  
 import { type RootState  } from '../store/store'
-import useFetchProducts from '../api/useFetchProducts'
-import Card from '../components/Card'
+ import Card from '../components/Card'
 import Header from '../components/Header'
 import Category from '../components/Category'
 import Slider from '../components/Slider'
@@ -21,7 +19,7 @@ function Home() {
       <div className='fixed  w-full top-0 z-2 bg-white py-4'><Header textColor={''} iconColor=''/> </div>
     
    <>
-   <div className='mt-[120px] md:mt-[100px] container max-w-7xl mx-auto'>
+   <div className='mt-30 md:mt-25 container max-w-7xl mx-auto'>
      <Slider />
    </div>
   

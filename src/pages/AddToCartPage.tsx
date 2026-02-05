@@ -8,8 +8,7 @@ import BuyNowButton from "../components/BuyNowButton";
 
 function AddToCartPage() {
   const product = useSelector((state: RootState) => state.cart.items);
-  const userToken=useSelector((state:RootState)=>state.auth.token)
-  const dispatch = useDispatch();
+   const dispatch = useDispatch();
   console.log(product);
 
   const totalPrice = product.reduce((sum, item) => {
@@ -33,7 +32,7 @@ function AddToCartPage() {
       <div className="fixed  w-full top-0 z-2 bg-blue-500 py-1">
         <Header textColor="text-white" iconColor="brightness-0 invert" />
       </div>
-      <div className="mt-[100px] container mx-auto max-w-6xl flex flex-col lg:flex-row ">
+      <div className="mt-25 container mx-auto max-w-6xl flex flex-col lg:flex-row ">
         <div className="w-full lg:w-2/3   ">
           <h1 className="text-center lg:text-left capitalize font-semibold shadow pb-2 p-2">
             {" "}
@@ -47,7 +46,7 @@ function AddToCartPage() {
                     <img
                       src={product.thumbnail}
                       alt={product.thumbnail}
-                      className="h-[150px]"
+                      className="h-38"
                     />
                   </div>
                   <div className="w-3/4 p-3">

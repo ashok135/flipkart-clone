@@ -1,5 +1,4 @@
-import React from 'react'
-import { Navigate, useLocation, useNavigate } from 'react-router-dom'
+ import { Navigate, useLocation,   } from 'react-router-dom'
 interface RouteProps{
     isAuth: string |null
     children:any
