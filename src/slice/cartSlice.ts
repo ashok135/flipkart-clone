@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import React from 'react'
-import type { Product } from "../types";
+ import type { Product } from "../types";
 
 interface CartItem extends Product {
     qty: number;
