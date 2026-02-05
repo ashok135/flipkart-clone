@@ -1,7 +1,6 @@
-import { createAsyncThunk, createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice,   } from "@reduxjs/toolkit";
 import api from "../api/api";
-import { useState } from "react";
-import type { Product } from "../types";
+ import type { Product } from "../types";
  export interface BrandProps{
    name:string
    id:boolean
@@ -80,7 +79,7 @@ const poroductsSlice = createSlice({
 
     })
 
-     .addCase(fetchCategoryList.pending,(state,action)=>{
+     .addCase(fetchCategoryList.pending,(state, )=>{
         state.loading = true
      })
      .addCase(fetchCategoryList.fulfilled,(state,action)=>{
